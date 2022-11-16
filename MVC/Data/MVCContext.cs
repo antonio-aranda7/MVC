@@ -7,11 +7,11 @@ using MVC.Models;
 using GigHub.Models;
 using Configuration;
 using Entities.Configuration;
-using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace MVC.Data
 {
-    public class MVCContext : DbContext
+    public class MVCContext : IdentityDbContext<User>
     {
         public MVCContext (DbContextOptions<MVCContext> options)
             : base(options)
@@ -49,10 +49,10 @@ namespace MVC.Data
             modelBuilder.ApplyConfiguration(new UserConfiguration());
         }
 
-        public DbSet<Gig> Gig { get; set; }
+        public DbSet<Gig>? Gig { get; set; }
 
         //public DbSet<Genre> Genres { get; set; }
-        public DbSet<Attendance> Attendances { get; set; }
-        public DbSet<Following> Followings { get; set; }
+        public DbSet<Attendance>? Attendances { get; set; }
+        public DbSet<Following>? Followings { get; set; }
     }
 }

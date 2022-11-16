@@ -12,12 +12,10 @@ namespace GigHub.Models
         [Column("GigId")]
         public int Id { get; set; }
 
-        //[ForeignKey(nameof(Artist))]
+        [ForeignKey(nameof(Artist))]
         public string? ArtistId { get; set; }
         public User? Artist { get; set; }
 
-        //[DisplayFormat(DataFormatString = "{0:dd-MMM-yy}")]
-        //[BindProperty]
         public DateTime DateTime { get; set; }
 
         [Required]

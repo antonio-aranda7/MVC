@@ -49,7 +49,7 @@ namespace MVC.Controllers
         // GET: Gigs/Create
         public IActionResult Create()
         {
-            ViewData["ArtistId"] = new SelectList(_context.Set<User>(), "Id", "Id");
+            ViewData["ArtistId"] = new SelectList(_context.Set<User>(), "Id", "Name");
             ViewData["GenreId"] = new SelectList(_context.Set<Genre>(), "Id", "Name");
             return View();
         }
@@ -67,13 +67,13 @@ namespace MVC.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ArtistId"] = new SelectList(_context.Set<User>(), "Id", "Id", gig.ArtistId);
+            ViewData["ArtistId"] = new SelectList(_context.Set<User>(), "Id", "Name", gig.ArtistId);
             ViewData["GenreId"] = new SelectList(_context.Set<Genre>(), "Id", "Name", gig.GenreId);
             return View(gig);
         }
 
         // GET: Gigs/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Create(int? id)
         {
             if (id == null || _context.Gig == null)
             {
@@ -85,7 +85,7 @@ namespace MVC.Controllers
             {
                 return NotFound();
             }
-            ViewData["ArtistId"] = new SelectList(_context.Set<User>(), "Id", "Id", gig.ArtistId);
+            ViewData["ArtistId"] = new SelectList(_context.Set<User>(), "Id", "Name", gig.ArtistId);
             ViewData["GenreId"] = new SelectList(_context.Set<Genre>(), "Id", "Name", gig.GenreId);
             return View(gig);
         }
@@ -122,7 +122,7 @@ namespace MVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ArtistId"] = new SelectList(_context.Set<User>(), "Id", "Id", gig.ArtistId);
+            ViewData["ArtistId"] = new SelectList(_context.Set<User>(), "Id", "Name", gig.ArtistId);
             ViewData["GenreId"] = new SelectList(_context.Set<Genre>(), "Id", "Name", gig.GenreId);
             return View(gig);
         }

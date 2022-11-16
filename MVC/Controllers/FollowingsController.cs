@@ -1,6 +1,7 @@
 ﻿using GigHub.Dtos;
 using GigHub.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVC.Data;
 
@@ -15,7 +16,63 @@ namespace GigHub.Controllers
         {
             _context = context;
         }
-        [HttpPost]
+
+        // GET: Gigs/Edit/5
+        public async Task<IActionResult> Follow(String? id)
+        {
+            if (id == null || _context.Gig == null)
+            {
+                return NotFound();
+            }
+
+            var gig = await _context.Gig.FindAsync(id);
+            if (gig == null)
+            {
+                return NotFound();
+            }
+            ViewData["ArtistId"] = new SelectList(_context.Set<User>(), "Id", "Id", gig.ArtistId);
+            ViewData["GenreId"] = new SelectList(_context.Set<Genre>(), "Id", "Name", gig.GenreId);
+            return View(gig);
+        }
+
+        // POST: Gigs/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /*[HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Follow(int id, [Bind("Id,ArtistId,DateTime,Venue,GenreId")] Gig gig)
+        {
+            if (id != gig.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(gig);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!GigExists(gig.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["ArtistId"] = new SelectList(_context.Set<User>(), "Id", "Id", gig.ArtistId);
+            ViewData["GenreId"] = new SelectList(_context.Set<Genre>(), "Id", "Name", gig.GenreId);
+            return View(gig);
+        }*/
+
+        /*[HttpPost]
         public async Task<IActionResult> Follow(int? id)
         {
             if (id == null || _context.Gig == null)
@@ -33,7 +90,7 @@ namespace GigHub.Controllers
             }
 
             return View(gig);
-        }
+        }*/
 
         /*[HttpPost]
         public IActionResult Follow(FollowingDto dto)

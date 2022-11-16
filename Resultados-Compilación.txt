@@ -1,0 +1,18 @@
+﻿Operación Recompilar iniciada...
+1>------ Operación Recompilar todo iniciada: proyecto: MVC, configuración: Debug Any CPU ------
+Se ha restaurado D:\AACJ\Maya Sur Systems\KPMG\Courses\MVC\MVC\MVC.csproj (en 432 ms).
+1>D:\AACJ\Maya Sur Systems\KPMG\Courses\MVC\MVC\MVC.csproj : warning NU1701: El paquete "Microsoft.AspNet.WebApi.Core 5.2.9" se restauró con ".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1" en lugar de la plataforma de destino del proyecto "net6.0". Puede que el paquete no sea totalmente compatible con el proyecto.
+1>D:\AACJ\Maya Sur Systems\KPMG\Courses\MVC\MVC\Data\MVCContext.cs(16,16,16,26): warning CS8618: El elemento propiedad "Gig" que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de declarar el elemento propiedad como que admite un valor NULL.
+1>D:\AACJ\Maya Sur Systems\KPMG\Courses\MVC\MVC\Data\MVCContext.cs(16,16,16,26): warning CS8618: El elemento propiedad "Attendances" que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de declarar el elemento propiedad como que admite un valor NULL.
+1>D:\AACJ\Maya Sur Systems\KPMG\Courses\MVC\MVC\Data\MVCContext.cs(16,16,16,26): warning CS8618: El elemento propiedad "Followings" que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de declarar el elemento propiedad como que admite un valor NULL.
+1>D:\AACJ\Maya Sur Systems\KPMG\Courses\MVC\MVC\Models\User.cs(19,16,19,20): warning CS8618: El elemento propiedad "Name" que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de declarar el elemento propiedad como que admite un valor NULL.
+1>D:\AACJ\Maya Sur Systems\KPMG\Courses\MVC\MVC\Views\Gigs\Delete.cshtml(24,40,24,52): warning CS8602: Desreferencia de una referencia posiblemente NULL.
+1>D:\AACJ\Maya Sur Systems\KPMG\Courses\MVC\MVC\Views\Gigs\Delete.cshtml(42,40,42,51): warning CS8602: Desreferencia de una referencia posiblemente NULL.
+1>D:\AACJ\Maya Sur Systems\KPMG\Courses\MVC\MVC\Views\Gigs\Details.cshtml(29,40,29,52): warning CS8602: Desreferencia de una referencia posiblemente NULL.
+1>D:\AACJ\Maya Sur Systems\KPMG\Courses\MVC\MVC\Views\Gigs\Details.cshtml(47,40,47,51): warning CS8602: Desreferencia de una referencia posiblemente NULL.
+1>D:\AACJ\Maya Sur Systems\KPMG\Courses\MVC\MVC\Views\Gigs\Index.cshtml(46,48,46,59): warning CS8602: Desreferencia de una referencia posiblemente NULL.
+1>D:\AACJ\Maya Sur Systems\KPMG\Courses\MVC\MVC\Views\Gigs\Index.cshtml(55,48,55,58): warning CS8602: Desreferencia de una referencia posiblemente NULL.
+1>MVC -> D:\AACJ\Maya Sur Systems\KPMG\Courses\MVC\MVC\bin\Debug\net6.0\MVC.dll
+1>Compilación del proyecto "MVC.csproj" terminada.
+========== Recompilar todo: 1 correcto, 0 con errores, 0 omitido ===========
+========= 00:04.941 Transcurrido ===========

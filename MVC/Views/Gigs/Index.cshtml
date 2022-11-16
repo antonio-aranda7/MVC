@@ -57,16 +57,18 @@
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
+
+                <a asp-controller="Followings" asp-action="Follow" method="post" asp-route-id="@item.ArtistId">Follow!</a>|
+                <a asp-controller="Attendances" asp-action="Attend" method="post" asp-route-id="@item.Id">Going?</a> 
 
                 <form asp-controller="Followings" asp-action="Follow" method="post">
-                        <input type="hidden" asp-for="@item.ArtistId" />
-                    <input type="submit" value="Follow" class="btn btn-link btn-sm js-toggle-follow" data-user-id="@item.ArtistId"/>
+                    <input type="hidden" asp-for="@item.ArtistId" />
+                    <input type="submit" value="Follow" class="btn btn-link btn-sm js-toggle-follow" />
                 </form>
 
-                <form asp-controller="Attendances" asp-action="Attend" method="post">
-                        <input type="hidden" asp-for="@item.Id" />
-                        <input type="submit" value="Going?" class="btn btn-link btn-sm js-toggle-follow" data-gig-id="@item.Id"/>
+                <form asp-controller="Attendances" asp-action="Attend" method="post" asp-route-id="@item.Id">
+                    <input type="submit" value="Going?" class="btn btn-link btn-sm js-toggle-follow"/>
                 </form>
             </td>
         </tr>

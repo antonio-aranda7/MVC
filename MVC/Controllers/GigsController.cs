@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using GigHub.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using GigHub.Models;
 using MVC.Data;
 
 namespace MVC.Controllers
@@ -47,6 +44,7 @@ namespace MVC.Controllers
         }
 
         // GET: Gigs/Create
+        [Authorize]
         public IActionResult Create()
         {
             ViewData["ArtistId"] = new SelectList(_context.Set<User>(), "Id", "Name");
@@ -73,7 +71,8 @@ namespace MVC.Controllers
         }
 
         // GET: Gigs/Edit/5
-        public async Task<IActionResult> Create(int? id)
+        [Authorize]
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Gig == null)
             {
@@ -128,6 +127,7 @@ namespace MVC.Controllers
         }
 
         // GET: Gigs/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Gig == null)

@@ -8,6 +8,7 @@ using GigHub.Models;
 using Configuration;
 using Entities.Configuration;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Entities.Dtos;
 
 namespace MVC.Data
 {
@@ -54,5 +55,7 @@ namespace MVC.Data
         //public DbSet<Genre> Genres { get; set; }
         public DbSet<Attendance>? Attendances { get; set; }
         public DbSet<Following>? Followings { get; set; }
+        public DbSet<Entities.Dtos.UserForRegistrationDto> UserForRegistrationDto { get; set; }
+        public DbSet<Entities.Dtos.UserForAuthenticationDto> UserForAuthenticationDto { get; set; }
     }
 }

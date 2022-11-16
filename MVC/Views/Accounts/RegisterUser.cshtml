@@ -1,19 +1,14 @@
 ﻿@model Entities.Dtos.UserForRegistrationDto
+
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Create";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
-
 
 <h4>UserForRegistrationDto</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-controller="Accounts" asp-action="RegisterUser" method="post">
+        <form asp-action="RegisterUser">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
@@ -36,7 +31,7 @@
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Register" class="btn btn-primary" />
             </div>
         </form>
     </div>
@@ -44,7 +39,5 @@
 
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

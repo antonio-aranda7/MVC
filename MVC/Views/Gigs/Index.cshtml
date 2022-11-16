@@ -58,9 +58,9 @@
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
-                    <a asp-controller="Attendances" asp-action="Create" method="post" asp-route-id="0,@item.Id,@item.ArtistId">Attendances!</a>|
+                <a asp-controller="Attendances" asp-action="Create" method="post" asp-route-id="0,@item.Id,@item.ArtistId">Going?</a>|
 
-                <a asp-controller="Followings" asp-action="Follow" method="post" asp-route-id="@item.ArtistId">Follow!</a>|
+                <!--<a asp-controller="Followings" asp-action="Follow" method="post" asp-route-id="@item.ArtistId">Follow!</a>|
                 <a asp-controller="Attendances" asp-action="Attend" method="post" asp-route-id="@item.Id">Going?</a> 
 
                 <form asp-controller="Followings" asp-action="Follow" method="post">
@@ -70,7 +70,7 @@
 
                 <form asp-controller="Attendances" asp-action="Attend" method="post" asp-route-id="@item.Id">
                     <input type="submit" value="Going?" class="btn btn-link btn-sm js-toggle-follow"/>
-                </form>
+                </form>-->
             </td>
         </tr>
 }
